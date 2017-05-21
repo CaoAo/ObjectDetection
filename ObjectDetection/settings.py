@@ -25,7 +25,7 @@ SECRET_KEY = 'qjn5*3mj-$wrn^8af#3d9=%5^*4m_^4&zltcns(q#dj!081a9a'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["www.caoao.org","localhost","47.88.228.159","127.0.0.1",]
+ALLOWED_HOSTS = ["www.caoao.org","caoao.org",".caoao.org","47.88.228.159","localhost","127.0.0.1"]
 
 
 # Application definition
