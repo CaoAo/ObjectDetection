@@ -1,13 +1,11 @@
 from django.core.files.storage import FileSystemStorage
-from PIL import Image
+from PIL import Image,ImageFilter
 import os
+from ObjectDetection.settings import MEDIA_ROOT
 
-def detectImg(Imgurl):
-    fs = FileSystemStorage()
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    Img=Image.open(os.path.join(BASE_DIR,Imgurl))
-    resultImg=Img.convert('L')
-    resultImgname = fs.save(resultImg.name, resultImg)
-    result = fs.url(resultImgname)
-    return result
+def detectImg(path):
+    Img=Image.open(path)
+    resultImg =Img.filter(ImageFilter.BLUR)
+    resultImg.save(path)
+
 
