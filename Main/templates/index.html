@@ -3,14 +3,33 @@
 <head>
     <title>ObjectDetection</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <link href="static/bootstrap-fileinput/css/fileinput.min.css" media="all" rel="stylesheet" type="text/css" />
+    <script src="static/bootstrap-fileinput/js/fileinput.min.js"></script>
 </head>
 <body>
+    <nav class="navbar">
+      <div class="container-fluid">
+      </div>
+    </nav>
+    <div>
+      <img src="static/logoko.png" alt="LOGO" class="img-rounded center-block">
+    </div>
+    <div class="row col-md-offset-3 col-md-6">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <input id="input-1" type="file" class="file" name="Image">
+      </form>
+    </div>
+    <div style="height:3em"></div>
+    <div>
+      {% if result %}
+        <img src="{{ result }}" alt={{ result }} class="img-rounded center-block">
+      {% else %}
+        <img src="static/example.jpg" alt="Example" class="img-rounded center-block">
+      {% endif %}
+    </div>
 
-<div class="row">
-    <div class="col-md-11"> Fuck</div>
-    <div class="col-md-1"> you</div>    
-</div>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
